@@ -1,0 +1,23 @@
+@media all and (min-width:350px) and (max-width: 576px) {
+    .imagediv {
+        width: 50%;
+    }
+    .textdiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.mybutton {
+    cursor: pointer;
+    font-size: 1em;
+}
