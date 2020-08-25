@@ -6,6 +6,7 @@ import Profile from './profile'
 import Home from './Home'
 import Model from './Model'
 import Model1 from './Model1'
+import Model2 from './Model2'
 
 import {
     BrowserRouter as Router,
@@ -27,6 +28,7 @@ function Main() {
                 <Route path='/profile' exact component={Profile} />
                 <Route path='/model' exact component={Model} />
                 <Route path='/model1' exact component={Model1} />
+                <Route path='/model2' exact component={Model2} />
             </Switch>
         </Router>
     </div>

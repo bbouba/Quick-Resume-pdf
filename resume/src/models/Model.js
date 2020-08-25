@@ -6,7 +6,6 @@ const DifferentModel=()=>{
     const [value, setValue]=useState(0)
     const [token]=useValidToken()
 
-    console.log(token)
     return(
         <>
         {
@@ -18,7 +17,7 @@ const DifferentModel=()=>{
                         <Link to={`/model1`}>Model1</Link>
                     </div>
                     <div className="card  col-md-4 col-sm-6  pt-5 pb-5">
-                        Model2
+                    <Link to={`/model2`}>Model2</Link>
                     </div>
                     <div className="card  col-md-4 col-sm-6 pt-5 pb-5">
                         Model3

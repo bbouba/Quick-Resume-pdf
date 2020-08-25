@@ -20,41 +20,50 @@ class ToPrintMod extends React.Component {
     render() {
         
             return (
-                <div className="row d-flex flex-row pt-5"> 
-                    <table className="table ml-5 mr-4" style={{width: "25%"}}> 
+                <div className="d-flex flex-column pt-5 pl-5 pr-5"> 
+                    <div className="row d-flex flex-row flex-wrap align-items-center">
+                        <table className="table" style={{width: "25%"}}> 
+                            <tbody>
+                                <tr>
+                                    <td>
+                                    {
+                                        this.state.picture ?
+                                            <Image className="card-img-top" src={this.state.picture} alt="Profile Image" 
+                                               width="50" style={{height: "20%", width: "75%"}}  roundedCircle/>
+                                        :<Image className="card-img-top" src={profPhoto} alt="Profile Image"
+                                            style={{height: "20%", width: "75%"}} roundedCircle/>
+                                    }
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table className="table" style={{width: "75%"}}> 
+                            <tbody>
+                                <tr className="d-flex flex-row flex-wrap" >
+                                    <td style={{fontSize: "1.5em"}}>{this.state.user.fullName}</td>
+                                    <td style={{fontSize: "1.3em"}}>{this.state.user.profession}</td>
+                                    <td style={{fontSize: "1.1em"}}>Birth date: {displayDate(this.state.user.birthDate)}</td>
+                                    {
+                                        this.state.user.gender.length>0 ?
+                                            <td style={{fontSize: "1.1em"}}>Sexe: {this.state.user.gender}</td>
+                                        :<td>gender</td>
+                                    }
+                                    <td style={{fontSize: "1.1em"}}>{this.state.user.email}</td>
+                                    {
+                                        this.state.user.otherProfile!==undefined ?
+                                            this.state.user.otherProfile.split(",").map((profile, idx)=>
+                                                <td key={idx} style={{fontSize: "1.1em"}}><a href="#">{profile.trim()}</a></td>)
+                                        : <td>Others profile</td>
+                                    }
+                                    
+                                    <td style={{fontSize: "1.1em"}}>{this.state.user.contact.phone}</td>
+                                    <td style={{fontSize: "1.1em"}}>{this.state.user.contact.address}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <table className="table"> 
                         <tbody>
-                            <tr className="d-flex flex-column justify-content-center" style={{lineHeight: "1em"}}>
-                                {
-                                    this.state.picture ?
-                                        <td  className="text-center"><Image className="card-img-top" src={this.state.picture} 
-                                        style={{width: "65%"}} alt="Profile Image" roundedCircle/></td>
-                                    : <td className="text-center"><Image className="card-img-top" src={profPhoto}  style={{width: "65%"}}
-                                                alt="Profile Image" roundedCircle/></td>
-                                }
-                                <td style={{fontSize: "1.3em"}}>{this.state.user.fullName}</td>
-                                <td style={{fontSize: "1.2em"}}>{this.state.user.profession}</td>
-                                <td style={{fontSize: "1.1em"}}>Birth date: {displayDate(this.state.user.birthDate)}</td>
-                                {
-                                    this.state.user.gender.length>0 ?
-                                        <td style={{fontSize: "1.1em"}}>Sexe: {this.state.user.gender}</td>
-                                    :<td>gender</td>
-                                }
-                                <td style={{fontSize: "1.1em"}}>{this.state.user.email}</td>
-                                {
-                                    this.state.user.otherProfile!==undefined ?
-                                        this.state.user.otherProfile.split(",").map((profile, idx)=>
-                                            <td key={idx} style={{fontSize: "1.1em"}}><a href="#">{profile.trim()}</a></td>)
-                                    : <td>Others profile</td>
-                                }
-                                
-                                <td style={{fontSize: "1.1em"}}>{this.state.user.contact.phone}</td>
-                                <td style={{fontSize: "1.1em"}}>{this.state.user.contact.address}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table className="table" style={{width: "60%"}}> 
-                        <tbody>
-                            
                             <tr className="d-flex flex-column justify-content-center">
                                 <td><span style={{fontSize: "1.7em"}}>Personal profile: </span> 
                                         <p style={{fontSize: "1.3em"}}>{this.state.user.summary}</p></td>
@@ -89,6 +98,7 @@ class ToPrintMod extends React.Component {
                     </table>
                 </div>
             );
+        
     }
 }
  
