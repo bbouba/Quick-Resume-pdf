@@ -54,7 +54,6 @@ class ToPrintMod extends React.Component {
                     </table>
                     <table className="table" style={{width: "60%"}}> 
                         <tbody>
-                            
                             <tr className="d-flex flex-column justify-content-center">
                                 <td><span style={{fontSize: "1.7em"}}>Personal profile: </span> 
                                         <p style={{fontSize: "1.3em"}}>{this.state.user.summary}</p></td>

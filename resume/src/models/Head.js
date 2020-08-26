@@ -11,6 +11,7 @@ const Head= (props)=>{
         localStorage.setItem('accessToken', null)
         localStorage.setItem('refreshToken', null)
     }
+    console.log(token)
     return(
         <Container className="bg-light">
             <nav className="row navbar d-flex align-items-center">
