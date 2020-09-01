@@ -9,7 +9,6 @@ const AddExperience=(props)=>{
         endDate: '',
         summary: ''
     })
-    // const [array, setArray]=useState(props.works)
     let array=props.works
 
     const handleChange=(e)=> {

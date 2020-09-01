@@ -6,7 +6,6 @@ const AddOtherSkills=(props)=>{
         name: '',
         summary: ''
     })
-    // const [array, setArray]=useState(props.education)
     let array=props.skill
 
     const handleChange=(e)=> {

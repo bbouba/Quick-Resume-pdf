@@ -4,12 +4,12 @@ import {Link, Redirect} from 'react-router-dom';
 
 const DifferentModel=()=>{
     const [value, setValue]=useState(0)
-    const [token]=useValidToken()
+    const token=useValidToken()
 
     return(
         <>
         {
-            token!=="n" ?
+            token!=="null" ?
                 <div className="container row text-center pt-5 pb-5" style={{fontSize: "1.5em"}}>
                     <h1 className="col-sm-12">Welcome to the Quick professional resume</h1>
                     <h4 className="col-sm-12">choose your model to print or save</h4>

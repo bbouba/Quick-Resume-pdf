@@ -14,7 +14,7 @@ function Profile() {
 
   const [updated, setUpdated]=useState(false)
   const [userData, picture, loading]=useFetchData(updated)
-  const [token]=useValidToken()
+  const token=useValidToken()
   const [addModal, setAddModal]= useState(false)
 
   const updateData=async (e, dataUp)=>{
@@ -60,7 +60,7 @@ return (
   <div className="container-fluid overflow-auto pb-3" style={{"height": "100vh", fontSize: "1.3em", "background": "rgba(177, 207, 148)"}} >
       <Head/>
       {
-        token!=="n" ?  !loading ?<Body data={userData} picture={picture} closeModal={closeModal}
+        token!=="null" ?  !loading ?<Body data={userData} picture={picture} closeModal={closeModal}
           openModal={openModal} addModal={addModal}   handlePictureChange={handlePictureChange} updateData={updateData}/> 
         : <p className="text-center">Loading...</p> 
         : <Redirect to='/login' />

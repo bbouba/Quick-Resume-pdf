@@ -104,16 +104,15 @@ class ToPrintMod extends React.Component {
  
 const Model1 = () => {
     const [userData, picture, loading]=useFetchData()
-    const [token]=useValidToken()
+    const token=useValidToken()
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
     });
-    
     return (
         <>
         {
-            token!=="n" ?
+            token!=="null" ?
                 <div className="overflow-auto pt-3"  style={{"height": "100vh", fontFamily: "arial"}}>
                     <div className="text-center">
                         <button style={{fontSize: "1.5em"}} onClick={handlePrint}> Print or Save the PDF!</button>
