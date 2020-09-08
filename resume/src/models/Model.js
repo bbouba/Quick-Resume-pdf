@@ -20,7 +20,7 @@ const DifferentModel=()=>{
                     <Link to={`/model2`}>Model2</Link>
                     </div>
                     <div className="card  col-md-4 col-sm-6 pt-5 pb-5">
-                        Model3
+                    <Link to={`/model3`}>Model3</Link>
                     </div>
                     <div className="card  col-md-4 col-sm-6 pt-5 pb-5">
                         Model4
