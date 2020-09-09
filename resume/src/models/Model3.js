@@ -4,7 +4,7 @@ import {Link, Redirect} from 'react-router-dom';
 import {useFetchData, useValidToken} from './CustomHooks'
 import {displayDate} from './FormatDate'
 import profPhoto from './profile.png'
-import {Image, Container, Headers, Card} from 'react-bootstrap'
+import { Image, Container, Card } from 'react-bootstrap'
 
 class ResumeType3 extends React.Component {
     constructor(props){
@@ -38,14 +38,11 @@ class ResumeType3 extends React.Component {
                             </Container>
                             <Card>
                                 <div className="d-inline-flex justify-content-center p-20px col-example" style={{backgroundColor: "black", color: "white"}}>
-                                    {/* <p style={{backgroundColor: "black", color: "white", margin: "7px"}}>Birth date: {displayDate(this.state.user.birthDate)}</p> */}
-                                    <p style={{margin: "7px"}}>{this.state.user.email}</p> 
-                                    <p style={{margin: "7px"}}>{this.state.user.contact.address}</p>
-                                    <p style={{margin: "7px"}}>{this.state.user.contact.phone}</p>
+                                    <p style={{margin: "7px"}}>✉️{this.state.user.email}</p> 
+                                    <p style={{margin: "7px"}}>🔘{this.state.user.contact.address}</p>
+                                    <p style={{margin: "7px"}}>📞{this.state.user.contact.phone}</p>
                                 </div>
                             </Card>
-                            <Card.Body>
-                                <div></div>
                                 <table className="table" style={{width: "60%"}}>
                                     <tbody>
                                     <tr className="d-flex flex-column justify-content-center">
@@ -80,7 +77,6 @@ class ResumeType3 extends React.Component {
                                     </tr>
                                     </tbody> 
                                 </table>
-                            </Card.Body>
                         </Card>
                     </Container>
                 </div>
