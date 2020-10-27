@@ -21,29 +21,29 @@ class ResumeType3 extends React.Component {
             <>
                 <div>
                     <Container>
-                        <Card>
-                            <Container className="d-flex justify-content-center" style={{backgroundColor: "black", color: "white"}}>
-                            <div >
-                                {
-                                    this.state.picture ?
-                                    <Image className="card-img-top" src={this.state.picture} alt="Profile Image" 
-                                        width="50" style={{height: "150px", width: "150px"}}  roundedCircle/>
-                                    :<Image className="card-img-top" src={profPhoto} alt="Profile Image"
-                                        style={{height: "150px", width: "150px"}} roundedCircle/>
-                                }
-                                    <h2 className="d-flex flex-wrap justify-content-center" 
-                                        style={{fontSize: "1.5em", marginTop: "5px" }}>{this.state.user.fullName}</h2>
-                                    <p className="d-flex flex-wrap justify-content-center" style={{fontStyle: "italic"}}>{this.state.user.profession}</p>
-                            </div>
+                        <Card className='pt-2'>
+                            <Container className="d-flex justify-content-center bg-dark" style={{color: "white"}}>
+                                <div>
+                                    {
+                                        this.state.picture ?
+                                        <Image className="card-img-top" src={this.state.picture} alt="Profile Image" 
+                                            width="50" style={{height: "150px", width: "150px"}}  roundedCircle/>
+                                        :<Image className="card-img-top" src={profPhoto} alt="Profile Image"
+                                            style={{height: "150px", width: "150px"}} roundedCircle/>
+                                    }
+                                        <h2 className="d-flex flex-wrap justify-content-center" 
+                                            style={{fontSize: "1.5em", marginTop: "5px" }}>{this.state.user.fullName}</h2>
+                                        <p className="d-flex flex-wrap justify-content-center" style={{fontStyle: "italic"}}>{this.state.user.profession}</p>
+                                </div>
                             </Container>
                             <Card>
-                                <div className="d-inline-flex justify-content-center p-20px col-example" style={{backgroundColor: "black", color: "white"}}>
+                                <div className="d-inline-flex justify-content-center col-example bg-dark" style={{color: "white"}}>
                                     <p style={{margin: "7px"}}>✉️{this.state.user.email}</p> 
                                     <p style={{margin: "7px"}}>🔘{this.state.user.contact.address}</p>
                                     <p style={{margin: "7px"}}>📞{this.state.user.contact.phone}</p>
                                 </div>
                             </Card>
-                                <table className="table" style={{width: "60%"}}>
+                                <table className="table" style={{width: "100%"}}>
                                     <tbody>
                                     <tr className="d-flex flex-column justify-content-center">
                                         <td><span style={{fontSize: "1.7em"}}>Personal profile: </span> 

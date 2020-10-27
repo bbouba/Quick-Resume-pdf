@@ -43,3 +43,12 @@ mongoose.connect(process.env.MONGODB_KEY, mongoConxParams, err => {
         });
     });
 });
+
+// log a message and stop the server
+function terminateServer(action, error = {}) {
+    const errorMsg = action + ':\n' +
+        (error.code ? `Code: ${error.code}` + '\n' : '') +
+        (error.message ? error.message + '\n' : '');
+    console.log(errorMsg, '\nThe Server is terminating.\n');
+    process.exit(1);
+};
