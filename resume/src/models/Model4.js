@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './print.css';
 import { useReactToPrint } from 'react-to-print';
 import {Link, Redirect} from 'react-router-dom';
 import {useFetchData, useValidToken} from './CustomHooks'
 import {displayDate} from './FormatDate'
 import { Image, Container, Card } from 'react-bootstrap'
+// import './print.css';
 
-class ResumeType3 extends React.Component {
+class ResumeType4 extends React.Component {
     constructor(props){
         super(props);
         this.state= {
@@ -20,7 +20,7 @@ class ResumeType3 extends React.Component {
         return(
             <>
                 <div>
-                    <Container className='d-flex flex-row'>
+                    <Container className='d-flex flex-row print4'>
                         <Card className='p-5' style={{fontFamily: 'arial sans-serif', width: "70%"}}>
                             <Container style={{color: "dark"}}>
                                 <h3 style={{fontSize: '1.7em'}}>{this.state.user.fullName}</h3>
@@ -91,19 +91,26 @@ const Model4 = () => {
         <>
             {
                 token!=="null" ?
-                    <div className="overflow-auto pt-3"  style={{"height": "100vh"}}>
+                    <div className="overflow-auto pt-3"  style={{"height": "100vh", 'pageStyle': 'landscape'}}>
                         <div className="text-center">
                             <button style={{fontSize: "1.5em"}} onClick={handlePrint}> Print or Save the PDF!</button>
                             <Link className="bg-info text-white text-center ml-1 p-2 rounded" to={`/model`}>Back to choose models </Link>
                         </div>
                         {
-                            !loading ? <ResumeType3 ref={componentRef}  userData={userData} picture={picture}  loading={loading} token={token}/> : ''
+                            !loading ? <> <LandscapeOrientation/> <ResumeType4 ref={componentRef}  userData={userData} picture={picture}  loading={loading} token={token}/></> : ''
                         }
+                        
                     </div>
                 : <Redirect to='/login' />
             }
         </>
     );
 };
+
+const LandscapeOrientation = () => ( 
+    <style type = "text/css"> 
+      {"@media print { @page {size: landscape}}"} 
+    </style> 
+  );
 
 export default Model4
