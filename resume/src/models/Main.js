@@ -8,6 +8,7 @@ import Model from './Model'
 import Model1 from './Model1'
 import Model2 from './Model2'
 import Model3 from './Model3'
+import Model4 from './Model4'
 
 import {
     BrowserRouter as Router,
@@ -31,6 +32,7 @@ function Main() {
                 <Route path='/model1' exact component={Model1} />
                 <Route path='/model2' exact component={Model2} />
                 <Route path='/model3' exact component={Model3} />
+                <Route path='/model4' exact component={Model4} />
             </Switch>
         </Router>
     </div>
